@@ -1,1 +1,6 @@
-/home/andre/Projects/dummy-project/.gitignore
+/.bazelbsp/
+/.bsp/
+/.idea/
+/.ijwb/
+/bazel-*
+.DS_Store
