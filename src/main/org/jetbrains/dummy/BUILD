@@ -1,7 +1,7 @@
-load("@rules_java//java:defs.bzl", "java_binary")
+load("@rules_java//java:defs.bzl", "java_library")
 
-java_binary(
+java_library(
     name = "dummy",
     srcs = ["Dummy.java"],
-    main_class = "org.jetbrains.dummy.Dummy",
+    visibility = ["//visibility:public"],
 )
