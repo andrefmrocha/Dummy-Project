@@ -38,7 +38,7 @@ scala_register_toolchains()
 
 RULES_JVM_EXTERNAL_TAG = "3bb065efc666579fc2eb4e154f9b7b6bf334af27"
 
-BAZEL_SONATYPE_TAG = "8c5a039800e0b56c79640315ee56fe3f61ae0ac6"
+BAZEL_SONATYPE_TAG = "7b687ae7a9fc19bf54fed360da5bd3b9691ab118"
 
 http_archive(
     name = "rules_jvm_external",

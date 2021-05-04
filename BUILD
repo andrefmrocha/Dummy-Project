@@ -16,7 +16,7 @@ java_export(
 
 sonatype_java_export(
     name = "dummy-sonatype",
-    maven_coordinates = "org.jetbrains.dummy:dummy:0.1.0",
+    maven_coordinates = "org.jetbrains:dummy:0.1.0",
     pom_template = "//:pom.xml",
     runtime_deps = [
         "//src/main/org/jetbrains/dummy",
