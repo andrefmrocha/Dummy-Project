@@ -38,7 +38,7 @@ scala_register_toolchains()
 
 RULES_JVM_EXTERNAL_TAG = "3bb065efc666579fc2eb4e154f9b7b6bf334af27"
 
-BAZEL_SONATYPE_TAG = "8d67d3b029185c030fe8b6057346f6450c57496c"
+BAZEL_SONATYPE_TAG = "8c5a039800e0b56c79640315ee56fe3f61ae0ac6"
 
 http_archive(
     name = "rules_jvm_external",
@@ -75,3 +75,4 @@ http_archive(
 #    name = "bazel_sonatype",
 #    path = "/home/andre/Projects/sbt-sonatype",
 #)
+#
