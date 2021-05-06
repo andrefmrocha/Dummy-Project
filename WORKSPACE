@@ -38,7 +38,7 @@ scala_register_toolchains()
 
 RULES_JVM_EXTERNAL_TAG = "3bb065efc666579fc2eb4e154f9b7b6bf334af27"
 
-BAZEL_SONATYPE_TAG = "7b687ae7a9fc19bf54fed360da5bd3b9691ab118"
+BAZEL_SONATYPE_TAG = "42619afdae25eeabf642f66e41f9e1dfbfaa50e2"
 
 http_archive(
     name = "rules_jvm_external",
@@ -46,33 +46,17 @@ http_archive(
     url = "https://github.com/bazelbuild/rules_jvm_external/archive/%s.zip" % RULES_JVM_EXTERNAL_TAG,
 )
 
-load("@rules_jvm_external//:defs.bzl", "maven_install")
-
-maven_install(
-    artifacts = [
-        "org.sonatype.spice.zapper:spice-zapper:1.3",
-        "org.wvlet.airframe:airframe-http_2.12:20.12.1",
-        "org.scala-lang.modules:scala-java8-compat_2.12:0.9.1",
-        "org.wvlet.airframe:airspec_2.12:20.12.1",
-        "org.backuity.clist:clist-core_2.12:3.5.1",
-        "org.backuity.clist:clist-macros_2.12:3.5.1",
-    ],
-    generate_compat_repositories = True,
-    repositories = [
-        "https://jcenter.bintray.com/",
-        "https://maven.google.com",
-        "https://repo1.maven.org/maven2",
-    ],
-)
-
-http_archive(
-    name = "bazel_sonatype",
-    strip_prefix = "sbt-sonatype-%s" % BAZEL_SONATYPE_TAG,
-    url = "https://github.com/andrefmrocha/sbt-sonatype/archive/%s.zip" % BAZEL_SONATYPE_TAG,
-)
-
-#local_repository(
+#http_archive(
 #    name = "bazel_sonatype",
-#    path = "/home/andre/Projects/sbt-sonatype",
+#    strip_prefix = "sbt-sonatype-%s" % BAZEL_SONATYPE_TAG,
+#    url = "https://github.com/andrefmrocha/sbt-sonatype/archive/%s.zip" % BAZEL_SONATYPE_TAG,
 #)
-#
+
+local_repository(
+    name = "bazel_sonatype",
+    path = "/home/andre/Projects/sbt-sonatype",
+)
+
+load("@bazel_sonatype//:defs.bzl", "sonatype_dependencies")
+
+sonatype_dependencies()

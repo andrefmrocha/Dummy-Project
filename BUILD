@@ -5,7 +5,6 @@ exports_files([
     "pom.xml",
 ])
 
-
 java_export(
     name = "dummy",
     maven_coordinates = "org.jetbrains.bsp:dummy:0.1.0",
@@ -16,7 +15,8 @@ java_export(
 
 sonatype_java_export(
     name = "dummy-sonatype",
-    maven_coordinates = "org.jetbrains:dummy:0.1.0",
+    maven_coordinates = "org.jetbrains:dummy:0.1.1",
+    maven_profile = "org.jetbrains",
     pom_template = "//:pom.xml",
     runtime_deps = [
         "//src/main/org/jetbrains/dummy",
