@@ -38,7 +38,7 @@ scala_register_toolchains()
 
 RULES_JVM_EXTERNAL_TAG = "3bb065efc666579fc2eb4e154f9b7b6bf334af27"
 
-BAZEL_SONATYPE_TAG = "42619afdae25eeabf642f66e41f9e1dfbfaa50e2"
+BAZEL_SONATYPE_TAG = "7a48b9788a351ba4e2ca624e70d6796c1ba8dd93"
 
 http_archive(
     name = "rules_jvm_external",
@@ -46,17 +46,17 @@ http_archive(
     url = "https://github.com/bazelbuild/rules_jvm_external/archive/%s.zip" % RULES_JVM_EXTERNAL_TAG,
 )
 
-#http_archive(
-#    name = "bazel_sonatype",
-#    strip_prefix = "sbt-sonatype-%s" % BAZEL_SONATYPE_TAG,
-#    url = "https://github.com/andrefmrocha/sbt-sonatype/archive/%s.zip" % BAZEL_SONATYPE_TAG,
-#)
-
-local_repository(
+http_archive(
     name = "bazel_sonatype",
-    path = "/home/andre/Projects/sbt-sonatype",
+    strip_prefix = "sbt-sonatype-%s" % BAZEL_SONATYPE_TAG,
+    url = "https://github.com/andrefmrocha/sbt-sonatype/archive/%s.zip" % BAZEL_SONATYPE_TAG,
 )
 
+#local_repository(
+#    name = "bazel_sonatype",
+#    path = "/home/andre/Projects/sbt-sonatype",
+#)
+#
 load("@bazel_sonatype//:defs.bzl", "sonatype_dependencies")
 
 sonatype_dependencies()
