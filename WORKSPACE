@@ -38,18 +38,17 @@ scala_register_toolchains()
 
 RULES_JVM_EXTERNAL_TAG = "3bb065efc666579fc2eb4e154f9b7b6bf334af27"
 
-BAZEL_SONATYPE_TAG = "7a48b9788a351ba4e2ca624e70d6796c1ba8dd93"
-
 http_archive(
     name = "rules_jvm_external",
     strip_prefix = "rules_jvm_external-%s" % RULES_JVM_EXTERNAL_TAG,
     url = "https://github.com/bazelbuild/rules_jvm_external/archive/%s.zip" % RULES_JVM_EXTERNAL_TAG,
 )
 
+BAZEL_SONATYPE_TAG = "28894f9ad6373a657ab4a395c8e7342277722347"
 http_archive(
     name = "bazel_sonatype",
-    strip_prefix = "sbt-sonatype-%s" % BAZEL_SONATYPE_TAG,
-    url = "https://github.com/andrefmrocha/sbt-sonatype/archive/%s.zip" % BAZEL_SONATYPE_TAG,
+    strip_prefix = "bazel-sonatype-%s" % BAZEL_SONATYPE_TAG,
+    url = "https://github.com/JetBrains/bazel-sonatype/archive/%s.zip" % BAZEL_SONATYPE_TAG,
 )
 
 #local_repository(
